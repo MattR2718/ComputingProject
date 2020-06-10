@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Blue Mountain Range Australia.jpg" />
+    <None Remove="earth.jpg" />
+    <None Remove="MusicQuizBackground.png" />
+    <None Remove="Untitled document.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Blue Mountain Range Australia.jpg" />
+    <Resource Include="earth.jpg" />
+    <Resource Include="MusicQuizBackground.png" />
+    <Resource Include="Untitled document.png" />
+  </ItemGroup>
+
+</Project>
