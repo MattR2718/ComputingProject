@@ -21,6 +21,7 @@ namespace ComputingProject
         public Page1()
         {
             InitializeComponent();
+            userdisplay.Text = "User: " + Login.GlobalStuff.user;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -41,6 +42,12 @@ namespace ComputingProject
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Login());
+            Login.GlobalStuff.user = "";
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }

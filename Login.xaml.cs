@@ -25,10 +25,11 @@ namespace ComputingProject
         }
         public static class GlobalStuff
         {
-            public static string[] names = new string["Usernames.txt".Length];
-            public static string[] pass = new string["Passwords.txt".Length];
+            public static string[] names = File.ReadAllLines("Usernames.txt");
+            public static string[] pass = File.ReadAllLines("Passwords.txt");
             public static int x = 0;
             public static string username;
+            public static string user;
         }
         public void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -46,7 +47,7 @@ namespace ComputingProject
         {
             string password = box4.Password.ToString();
             box3.Text = password;
-            if (reset.Text == "true")
+           /* if (reset.Text == "true")
             {
                 GlobalStuff.x = 0;
                 foreach (string linetxt in File.ReadLines("Usernames.txt"))
@@ -62,14 +63,14 @@ namespace ComputingProject
                     GlobalStuff.x++;
                 }
                 reset.Text = "false";
-            }
+            }*/
             GlobalStuff.x = 0;
-            string user = box2.Text;
+            GlobalStuff.user = box2.Text;
             while (GlobalStuff.x != ((GlobalStuff.pass.Length) - 1))
             {
                 if (GlobalStuff.pass[GlobalStuff.x] == password)
                 {
-                    if (GlobalStuff.names[GlobalStuff.x] == user)
+                    if (GlobalStuff.names[GlobalStuff.x] == GlobalStuff.user)
                     {
                         this.NavigationService.Navigate(new Page1());
                         GlobalStuff.x = ((GlobalStuff.pass.Length) - 1);

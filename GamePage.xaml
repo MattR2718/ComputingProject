@@ -9,7 +9,7 @@
       Title="GamePage">
 
     <Grid>
-        <TextBlock Text=""/>
+        <TextBlock x:Name="GuessCounter" Text=""/>
         <TextBox HorizontalAlignment="Center" Height="115" Margin="0,10,0,0" Text="GUESS THE SONG" TextWrapping="Wrap" VerticalAlignment="Top" Width="732" FontSize="80" FontWeight="Bold" FontStyle="Italic" IsReadOnly="True" FontFamily="Yu Gothic UI Semibold" TextAlignment="Center" Foreground="#FF16E411">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="#FFABADB3" Opacity="0"/>
@@ -19,6 +19,13 @@
             </TextBox.Background>
         </TextBox>
         <Button Content="Back" HorizontalAlignment="Center" Height="37" Margin="0,403,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,225,0,0" Text="Game Page" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="37"/>
+        <TextBox x:Name="Score" HorizontalAlignment="Center" Height="22" Margin="0,130,0,0" Text="Score: " TextWrapping="Wrap" VerticalAlignment="Top" Width="160" IsReadOnly="True" TextChanged="Score_TextChanged"/>
+        <TextBox x:Name="GuessCounter1" HorizontalAlignment="Center" Height="21" Margin="0,157,0,0" Text="Guesses Left: " TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsReadOnly="True" TextChanged="GuessCounter1_TextChanged"/>
+        <TextBox x:Name="ArtistDisplay" HorizontalAlignment="Center" Height="18" Margin="0,199,0,0" Text="Artist: " TextWrapping="Wrap" VerticalAlignment="Top" Width="220" IsReadOnly="True" TextChanged="ArtistDisplay_TextChanged"/>
+        <TextBox x:Name="SongClue" HorizontalAlignment="Center" Height="18" Margin="0,224,0,0" Text="Song Clue: " TextWrapping="Wrap" VerticalAlignment="Top" Width="222" IsReadOnly="True" TextChanged="SongClue_TextChanged"/>
+        <TextBox x:Name="UserGuess" HorizontalAlignment="Center" Height="19" Margin="0,266,0,0" Text="Enter Song Name..." GotFocus="TextBox_GotFocus" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" TextChanged="UserGuess_TextChanged"/>
+        <Button x:Name="SubmitButt" Content="Submit Guess" HorizontalAlignment="Center" Height="19" Margin="0,285,0,0" VerticalAlignment="Top" Width="220" Click="SubmitButt_Click"/>
+        <TextBox x:Name="SongsTestDisplay" HorizontalAlignment="Center" Height="68" Margin="0,309,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" TextChanged="SongsTestDisplay_TextChanged"/>
+        <Button x:Name="StartGame" Content="Start Game" HorizontalAlignment="Center" Height="20" Margin="0,105,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_1"/>
     </Grid>
 </Page>

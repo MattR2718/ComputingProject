@@ -19,6 +19,11 @@
             </TextBox.Background>
         </TextBox>
         <Button Content="Back" HorizontalAlignment="Center" Height="37" Margin="0,413,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Center" Height="60" Margin="0,165,0,0" Text="Leaderboard" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="first" HorizontalAlignment="Center" Height="35" Margin="0,125,0,0" Text="First: " TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Background="#FFF9BA32" Foreground="Black" FontSize="24" TextChanged="first_TextChanged"/>
+        <TextBox x:Name="second" HorizontalAlignment="Center" Height="35" Margin="0,179,0,0" Text="Second: " TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Foreground="Black" Background="#FFA5A2A2" FontSize="24" TextChanged="second_TextChanged"/>
+        <TextBox x:Name="third" HorizontalAlignment="Center" Height="34" Text="Third: " TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Margin="0,230,0,0" Background="#FFB07F18" FontSize="24" TextChanged="third_TextChanged"/>
+        <TextBox x:Name="fourth" HorizontalAlignment="Center" Height="35" Margin="0,283,0,0" Text="Fourth: " TextWrapping="Wrap" VerticalAlignment="Top" Width="310" FontSize="24" TextChanged="fourth_TextChanged"/>
+        <TextBox x:Name="fifth" HorizontalAlignment="Center" Height="35" Margin="0,337,0,0" Text="Fifth: " TextWrapping="Wrap" VerticalAlignment="Top" Width="310" FontSize="24" TextChanged="fifth_TextChanged"/>
+        <Button x:Name="refresh" Content="Refresh" HorizontalAlignment="Center" Height="31" Margin="0,377,0,0" VerticalAlignment="Top" Width="96" Click="refresh_Click"/>
     </Grid>
 </Page>

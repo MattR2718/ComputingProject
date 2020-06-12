@@ -27,6 +27,8 @@ namespace ComputingProject
         {
             public static string nuser = "Usernames.txt";
             public static string nassword = "Passwords.txt";
+            public static string[] dupe = File.ReadAllLines("Usernames.txt");
+            public static bool dupename = false;
         }
         public void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -40,12 +42,43 @@ namespace ComputingProject
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string newuser = "\n" + newname.Text;
-            string newpassword = "\n" + newpass.Text;
-            File.AppendAllText(Glob.nuser, newuser);
-            File.AppendAllText(Glob.nassword, newpassword);
-            MessageBox.Show("User Added");
-            this.NavigationService.Navigate(new Page1());
+            Glob.dupename = false;
+            foreach (string name in Glob.dupe)
+            {
+                if (name == newname.Text)
+                {
+                    Glob.dupename = true;
+                }
+            }
+            if (Glob.dupename)
+            {
+                MessageBox.Show("Username Taken");
+            }
+            else
+            {
+                string newuser = "\n" + newname.Text;
+                string newpassword = "\n" + newpass.Text;
+                //File.AppendAllText(Login.GlobalStuff.names, newuser);
+                using (StreamWriter sw2 = File.AppendText("Usernames.txt"))
+                {
+                    sw2.WriteLine(newuser);
+                }
+                Login.GlobalStuff.names = File.ReadAllLines("Usernames.txt");
+                //File.AppendAllText(Glob.nassword, newpassword);
+                using (StreamWriter sw3 = File.AppendText("Passwords.txt"))
+                {
+                    sw3.WriteLine(newpassword);
+                }
+                Login.GlobalStuff.pass = File.ReadAllLines("Passwords.txt");
+                using (StreamWriter sw = File.AppendText("Leaderboard.txt"))
+                {
+                    sw.WriteLine(Convert.ToString(0));
+                }
+                Leaderboard.GlobalLeaderboard.LeaderboardFile = File.ReadAllLines("Leaderboard.txt");
+                MessageBox.Show("User Added");
+                Login.GlobalStuff.user = newname.Text;
+                this.NavigationService.Navigate(new Page1());
+            }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
